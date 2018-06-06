@@ -2,7 +2,7 @@
 
 namespace FaigerSYS\superBAR\core;
 
-use pocketmine\scheduler\PluginTask;
+use pocketmine\scheduler\Task as PluginTask;
 
 class HUDShowTask extends PluginTask
 {
