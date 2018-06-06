@@ -8,6 +8,7 @@ class HUDShowTask extends PluginTask
 {
 
     private $HUD;
+    private $plugin;
 
     /**
      * HUDShowTask constructor.
@@ -17,7 +18,7 @@ class HUDShowTask extends PluginTask
     public function __construct($plugin, $HUD)
     {
         $this->HUD = $HUD;
-        parent::__construct($plugin);
+        $this->plugin = $plugin
     }
 
     /**
@@ -25,7 +26,7 @@ class HUDShowTask extends PluginTask
      */
     public function onRun(int $tick)
     {
-        $this->HUD->processHUD($this->getOwner()->getServer());
+        $this->HUD->processHUD($this->plugin->getServer());
     }
 
     /**
