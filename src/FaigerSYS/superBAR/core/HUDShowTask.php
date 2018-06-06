@@ -18,7 +18,7 @@ class HUDShowTask extends PluginTask
     public function __construct($plugin, $HUD)
     {
         $this->HUD = $HUD;
-        $this->plugin = $plugin
+        $this->plugin = $plugin;
     }
 
     /**
