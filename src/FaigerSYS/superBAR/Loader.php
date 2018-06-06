@@ -110,8 +110,8 @@ class Loader extends BaseModule {
 		else
 			$HUD->setData($settings, $plugins, $addons);
 		
-		$reload ? $this->getPlugin()->getServer()->getScheduler()->cancelTask($this->taskCache) : false;
-		$this->taskCache = $this->getPlugin()->getServer()->getScheduler()->scheduleRepeatingTask(new HUDShowTask($this->getPlugin(), $HUD), $timer)->getTaskId();
+		$reload ? $this->getPlugin()->getScheduler()->cancelTask($this->taskCache) : false;
+		$this->taskCache = $this->getPlugin()->getScheduler()->scheduleRepeatingTask(new HUDShowTask($this->getPlugin(), $HUD), $timer)->getTaskId();
 	}
 
     /**
@@ -133,7 +133,7 @@ class Loader extends BaseModule {
 	}
 	
 	public function onDisable() {
-		$this->getPlugin()->getServer()->getScheduler()->cancelTask($this->taskCache);
+		$this->getPlugin()->getScheduler()->cancelTask($this->taskCache);
 	}
 	
 }
