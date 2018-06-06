@@ -2,12 +2,13 @@
 
 namespace FaigerSYS\superBAR;
 
-use pocketmine\scheduler\PluginTask;
+use pocketmine\scheduler\Task as PluginTask;
 
 class LoaderTask extends PluginTask
 {
 
     private $loader;
+    private $plugin;
 
     /**
      * LoaderTask constructor.
@@ -17,7 +18,7 @@ class LoaderTask extends PluginTask
     public function __construct(superBAR $plugin, Loader $loader)
     {
         $this->loader = $loader;
-        parent::__construct($plugin);
+        $this->plugin = $plugin;
     }
 
     /**
@@ -25,7 +26,7 @@ class LoaderTask extends PluginTask
      */
     public function onRun(int $tick)
     {
-        $this->loader->onEnable($this->getOwner());
+        $this->loader->onEnable($this->plugin);
     }
 
 }
