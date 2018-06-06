@@ -23,7 +23,7 @@ class superBAR extends PluginBase
 
         BaseModule::setPlugin($this);
         !(superBAR::$loader instanceof Loader) ? superBAR::$loader = new Loader() : false;
-        $this->getServer()->getScheduler()->scheduleDelayedTask(new LoaderTask($this, superBAR::$loader), 0);
+        $this->getScheduler()->scheduleDelayedTask(new LoaderTask($this, superBAR::$loader), 0);
     }
 
     /**
